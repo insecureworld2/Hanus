@@ -1,123 +1,123 @@
-# Agente Hanus
+# Hanus Agent
 
-Agente Hanus es un asistente de inteligencia artificial multimodal, extensible y personalizable, diseñado para interacción por voz y texto, con integración de modelos de IA avanzados, herramientas personalizadas y administración web.
-
----
-
-## Tabla de Contenidos
-
-- [Características principales](#características-principales)
-- [Capacidades avanzadas de autoprogramación](#capacidades-avanzadas-de-autoprogramación)
-- [Ejemplos de tools incluidas](#ejemplos-de-tools-incluidas)
-- [Arquitectura](#arquitectura)
-- [Estructura de carpetas](#estructura-de-carpetas)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Endpoints principales](#endpoints-principales)
-- [Personalización y extensibilidad](#personalización-y-extensibilidad)
-- [Requisitos](#requisitos)
-- [Créditos y licencias](#créditos-y-licencias)
+Hanus Agent is a multimodal, extensible, and customizable artificial intelligence assistant designed for voice and text interaction, with integration of advanced AI models, custom tools, and a web administration panel.
 
 ---
 
-## ¿Por qué elegir Hanus?
+## Table of Contents
 
-- **Enterprise-ready**: Arquitectura robusta, modular y escalable, lista para producción y despliegue en entornos empresariales.
-- **Seguridad y control**: Ejecución de código en entornos restringidos, validación de parámetros y registro de logs para auditoría.
-- **Automatización avanzada**: Capacidad de auto-mejorarse, crear nuevas funciones y adaptarse a necesidades cambiantes sin intervención manual.
-- **Integración total**: API RESTful, panel web intuitivo, y soporte para integración con sistemas externos y pipelines de IA.
-- **Soporte multimodal**: Interacción natural por voz y texto, adaptable a asistentes físicos, bots, o aplicaciones web.
-- **Documentación y mantenibilidad**: Código documentado, estructura clara y ejemplos de uso para facilitar la adopción y el mantenimiento.
-
-## Roadmap y visión
-
-- **Integración con más modelos de IA**: Soporte para Llama, Qwen, Claude, y modelos locales.
-- **Plugins y skills**: Sistema de plugins para ampliar funcionalidades sin tocar el core.
-- **Panel de analítica**: Estadísticas de uso, logs de interacción y métricas de rendimiento.
-- **Despliegue cloud y on-premise**: Scripts y contenedores listos para Kubernetes, Docker Compose y servidores dedicados.
-- **Internacionalización**: Soporte multilenguaje y adaptación cultural.
-
-## Reconocimientos y motivación
-
-Hanus nace de la pasión por la IA aplicada, la automatización y la creación de asistentes realmente útiles, seguros y personalizables. Inspirado en los mejores copilots y asistentes del mercado, pero con control total y privacidad.
+- [Key Features](#key-features)
+- [Advanced Self-Programming Capabilities](#advanced-self-programming-capabilities)
+- [Sample Included Tools](#sample-included-tools)
+- [Architecture](#architecture)
+- [Folder Structure](#folder-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Main Endpoints](#main-endpoints)
+- [Customization & Extensibility](#customization--extensibility)
+- [Requirements](#requirements)
+- [Credits & License](#credits--license)
 
 ---
 
-## Características principales
+## Why Choose Hanus?
 
-- **Interacción por voz y texto**: Reconocimiento y síntesis de voz en español (STT/TTS) usando Whisper y Edge TTS.
-- **Soporte multiai**: Integración con modelos como Gemini, GPT, Grok, DeepSeek, y más.
-- **Herramientas (Tools) y funciones personalizadas**: Creadas desde el panel web o por la IA, ejecutables bajo demanda o de forma periódica.
-- **Panel de administración web**: Gestión de IAs, triggers, tools y usuarios.
-- **Chat de voz continuo**: Activación por palabra clave ("Hanus"/"Janus"), escucha y respuesta automática.
-- **Tareas periódicas y heartbeat**: Ejecución de tareas programadas y monitorización del sistema.
-- **Persistencia y base de datos**: Usuarios, configuraciones, funciones y triggers almacenados en SQLite.
+- **Enterprise-ready**: Robust, modular, and scalable architecture, ready for production and enterprise deployment.
+- **Security & Control**: Code execution in restricted environments, parameter validation, and logging for auditability.
+- **Advanced Automation**: Ability to self-improve, create new functions, and adapt to changing needs without manual intervention.
+- **Total Integration**: RESTful API, intuitive web panel, and support for integration with external systems and AI pipelines.
+- **Multimodal Support**: Natural interaction via voice and text, adaptable to physical assistants, bots, or web applications.
+- **Documentation & Maintainability**: Well-documented code, clear structure, and usage examples for easy adoption and maintenance.
 
-## Capacidades avanzadas de autoprogramación
+## Roadmap & Vision
 
-- **Generación y auto-integración de código**: Hanus puede crear nuevas funciones Python (tools) desde el panel web o por instrucciones en lenguaje natural, integrarlas automáticamente y ejecutarlas bajo demanda o de forma periódica, similar a GitHub Copilot pero en tu propio entorno.
-- **Extensibilidad dinámica**: El propio agente puede registrar nuevas tools en caliente, sin reiniciar el servidor, usando su propia herramienta `self_register_tool`.
-- **IA que programa**: Hanus es capaz de escribir código Python, integrarlo y probarlo, permitiendo que evolucione y se adapte a nuevas necesidades de forma autónoma.
+- **Integration with more AI models**: Support for Llama, Qwen, Claude, and local models.
+- **Plugins & Skills**: Plugin system to extend functionalities without touching the core.
+- **Analytics Panel**: Usage statistics, interaction logs, and performance metrics.
+- **Cloud & On-premise Deployment**: Scripts and containers ready for Kubernetes, Docker Compose, and dedicated servers.
+- **Internationalization**: Multilanguage support and cultural adaptation.
 
-## Ejemplos de tools incluidas
+## Recognition & Motivation
 
-- **moltbook**: Cliente para interactuar con la API de Moltbook (crear posts, consultar datos, etc.).
-- **self_register_tool**: Permite a Hanus registrar nuevas funciones/tools en caliente, guardando el código y los metadatos en la base de datos y el sistema de archivos.
-- **docker_run_server**: Crea y ejecuta servidores (Flask, FastAPI, Node.js, etc.) en contenedores Docker.
-- **web_search**: Realiza búsquedas en internet y devuelve resúmenes.
-- **calculator**: Evalúa expresiones matemáticas de forma segura.
-- **check_ram_usage, check_cpu_usage, check_disk_usage**: Monitorización del sistema.
-- **camera_snapshot, camera_move, camera_speak**: Control de cámaras RTSP.
+Hanus is born from a passion for applied AI, automation, and the creation of truly useful, secure, and customizable assistants. Inspired by the best copilots and assistants on the market, but with total control and privacy.
 
-Puedes ver y probar todas las tools disponibles desde el panel web o consultando el archivo `tools_registry.json`.
+---
 
-## Arquitectura
+## Key Features
+
+- **Voice and text interaction**: Spanish speech recognition and synthesis (STT/TTS) using Whisper and Edge TTS.
+- **Multi-AI support**: Integration with models like Gemini, GPT, Grok, DeepSeek, and more.
+- **Custom tools and functions**: Created from the web panel or by the AI, executable on demand or periodically.
+- **Web admin panel**: Manage AIs, triggers, tools, and users.
+- **Continuous voice chat**: Wake word activation ("Hanus"/"Janus"), automatic listening and response.
+- **Scheduled tasks & heartbeat**: Periodic task execution and system monitoring.
+- **Persistence & database**: Users, configs, functions, and triggers stored in SQLite.
+
+## Advanced Self-Programming Capabilities
+
+- **Code generation and self-integration**: Hanus can create new Python functions (tools) from the web panel or natural language instructions, integrate them automatically, and execute them on demand or periodically—similar to GitHub Copilot, but in your own environment.
+- **Dynamic extensibility**: The agent itself can register new tools on the fly, without restarting the server, using its own `self_register_tool` utility.
+- **AI that codes**: Hanus is able to write Python code, integrate and test it, allowing it to evolve and adapt to new needs autonomously.
+
+## Sample Included Tools
+
+- **moltbook**: Client to interact with the Moltbook API (create posts, query data, etc.).
+- **self_register_tool**: Allows Hanus to register new functions/tools on the fly, saving code and metadata to the database and filesystem.
+- **docker_run_server**: Creates and runs servers (Flask, FastAPI, Node.js, etc.) in Docker containers.
+- **web_search**: Performs internet searches and returns summaries.
+- **calculator**: Safely evaluates mathematical expressions.
+- **check_ram_usage, check_cpu_usage, check_disk_usage**: System monitoring.
+- **camera_snapshot, camera_move, camera_speak**: RTSP camera control.
+
+You can view and test all available tools from the web panel or by checking the `tools_registry.json` file.
+
+## Architecture
 
 - **Backend**: Python + Flask
-- **Frontend**: HTML5, Bootstrap, JS (plantillas Jinja2)
-- **Reconocimiento de voz**: [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
-- **Síntesis de voz**: [Edge TTS](https://github.com/rany2/edge-tts)
-- **Base de datos**: SQLite (SQLAlchemy)
-- **Tareas y scheduler**: APScheduler
-- **Integraciones IA**: Gemini, OnlineApp.pro, etc.
+- **Frontend**: HTML5, Bootstrap, JS (Jinja2 templates)
+- **Speech recognition**: [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
+- **Speech synthesis**: [Edge TTS](https://github.com/rany2/edge-tts)
+- **Database**: SQLite (SQLAlchemy)
+- **Tasks & scheduler**: APScheduler
+- **AI integrations**: Gemini, OnlineApp.pro, etc.
 
-## Estructura de carpetas
+## Folder Structure
 
 ```
 classAI/
-├── app.py                  # Cliente API externo (opcional)
+├── app.py                  # External API client (optional)
 ├── hanus/
-│   ├── run.py              # Entry point del servidor Flask
-│   ├── config.py           # Configuración global
-│   ├── hanus_voice_local.py# Cliente local de voz (micrófono)
+│   ├── run.py              # Flask server entry point
+│   ├── config.py           # Global config
+│   ├── hanus_voice_local.py# Local voice client (microphone)
 │   ├── app/
-│   │   ├── __init__.py     # Inicialización Flask y DB
-│   │   ├── api.py          # Endpoints REST/JSON (voz, chat, tools)
-│   │   ├── admin.py        # Panel web de administración
-│   │   ├── hanus_core.py   # Lógica principal de Hanus
+│   │   ├── __init__.py     # Flask & DB initialization
+│   │   ├── api.py          # REST/JSON endpoints (voice, chat, tools)
+│   │   ├── admin.py        # Web admin panel
+│   │   ├── hanus_core.py   # Hanus main logic
 │   │   ├── voice.py        # STT/TTS
-│   │   ├── models.py       # Modelos SQLAlchemy
-│   │   ├── ia_integrations.py # Integración con proveedores IA
-│   │   ├── tools/          # Herramientas y funciones
-│   │   ├── templates/      # Plantillas web (admin, chat, voz, tools)
+│   │   ├── models.py       # SQLAlchemy models
+│   │   ├── ia_integrations.py # AI provider integration
+│   │   ├── tools/          # Tools and functions
+│   │   ├── templates/      # Web templates (admin, chat, voice, tools)
 │   │   └── ...
-│   ├── voces/              # Audios de entrenamiento/usuarios
-│   └── instance/site.db    # Base de datos SQLite
+│   ├── voces/              # Training/user audios
+│   └── instance/site.db    # SQLite database
 └── ...
 ```
 
-## Instalación
+## Installation
 
-1. **Clona el repositorio**
-2. **Instala dependencias**:
+1. **Clone the repository**
+2. **Install dependencies**:
    ```zsh
    pip install -r requirements.txt
-   # O instala manualmente:
+   # Or install manually:
    pip install flask flask_sqlalchemy flask_login flask_wtf apscheduler faster-whisper edge-tts pyaudio numpy scipy requests
    ```
-3. **Configura variables** (opcional):
-   - Edita `hanus/config.py` para claves y rutas personalizadas.
-4. **Inicializa la base de datos**:
+3. **Configure variables** (optional):
+   - Edit `hanus/config.py` for custom keys and paths.
+4. **Initialize the database**:
    ```zsh
    cd hanus
    flask shell
@@ -126,45 +126,45 @@ classAI/
    >>> with app.app_context(): db.create_all()
    >>> exit()
    ```
-5. **Ejecuta el servidor**:
+5. **Run the server**:
    ```zsh
    python hanus/run.py
    ```
-6. **(Opcional) Ejecuta el cliente de voz local**:
+6. **(Optional) Run the local voice client**:
    ```zsh
    python hanus/hanus_voice_local.py
    ```
 
-## Uso
+## Usage
 
-- Accede al panel web: [http://localhost:5000/admin](http://localhost:5000/admin)
-- Prueba el chat de voz continuo o el chat de texto.
-- Crea y administra IAs, triggers y tools desde el panel.
-- Usa el endpoint `/api/hanus` para integración programática.
+- Access the web panel: [http://localhost:5000/admin](http://localhost:5000/admin)
+- Try the continuous voice chat or text chat.
+- Create and manage AIs, triggers, and tools from the panel.
+- Use the `/api/hanus` endpoint for programmatic integration.
 
-## Endpoints principales
+## Main Endpoints
 
-- `POST /api/hanus` — Chat IA (JSON: `{message, uid}`)
-- `POST /api/tts` — Texto a voz (JSON: `{text, voice}`)
-- `POST /api/stt` — Audio a texto (form-data: `audio`)
-- `POST /api/hanus/clear_history` — Borra historial de usuario
+- `POST /api/hanus` — AI chat (JSON: `{message, uid}`)
+- `POST /api/tts` — Text to speech (JSON: `{text, voice}`)
+- `POST /api/stt` — Audio to text (form-data: `audio`)
+- `POST /api/hanus/clear_history` — Clear user history
 
-## Personalización y extensibilidad
+## Customization & Extensibility
 
-- **Tools**: Añade funciones Python en el panel o en `app/tools/`.
-- **IAs**: Configura nuevos modelos y prompts en el panel.
-- **Triggers**: Define reglas para enrutar mensajes a diferentes IAs.
-- **Tareas periódicas**: Programa ejecuciones automáticas de tools.
+- **Tools**: Add Python functions in the panel or in `app/tools/`.
+- **AIs**: Configure new models and prompts in the panel.
+- **Triggers**: Define rules to route messages to different AIs.
+- **Scheduled tasks**: Program automatic tool executions.
 
-## Requisitos
+## Requirements
 - Python 3.10+
-- Linux recomendado (soporte parcial en Windows/Mac)
-- Dependencias listadas arriba
+- Linux recommended (partial support for Windows/Mac)
+- Dependencies listed above
 
-## Créditos y licencias
-- Proyecto privado para uso educativo y personal.
-- Basado en tecnologías open source.
+## Credits & License
+- Private project for educational and personal use.
+- Based on open source technologies.
 
 ---
 
-¿Dudas o sugerencias? Contacta al desarrollador principal.
+Questions or suggestions? Contact the lead developer.

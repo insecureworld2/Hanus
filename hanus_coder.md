@@ -12,7 +12,7 @@ Ideal para desarrolladores que buscan un asistente IA que **modifique código au
 ## 🚀 Características Principales
 
 - **Autonomía total**: El agente analiza el proyecto, planea cambios y aplica modificaciones vía tags XML (leer, escribir, crear archivos).
-- **Integraciones IA flexibles**: Soporte nativo para Google Gemini y OnlineApp.pro (Grok-4, GPT-4, DeepSeek, etc.).
+- **Integraciones IA flexibles**: Soporte nativo para Google Gemini, etc.. (Grok-4, GPT-4, DeepSeek, etc.).
 - **Herramientas de contexto**: Listado de archivos, árbol de proyecto, extracción de entidades Python (funciones/clases), previews de código.
 - **Seguridad prioritaria**: Rutas relativas al root del proyecto, validación estricta, no sale del directorio de trabajo.
 - **Personalizable**: Prompt del sistema editable en `prompt.md`, configuración de modelos y tokens.
@@ -52,13 +52,13 @@ Ideal para desarrolladores que buscan un asistente IA que **modifique código au
 Copia `.env.example` a `.env` y edita:
 ```
 GEMINI_API_KEY=tu_clave_gemini
-ONLINEAPP_API_KEY=tu_clave_onlineapp  # Para Grok/etc.
+INTERNAL_API_KEY=tu_clave_INTERNAL  # Para Grok/etc.
 ```
 
 O exporta directamente:
 ```bash
 export GEMINI_API_KEY="AIza..."
-export ONLINEAPP_API_KEY="sk-..."
+export INTERNAL_API_KEY="sk-..."
 ```
 
 Edita `prompt.md` para personalizar el comportamiento del agente (reglas absolutas ya incluidas).
@@ -89,7 +89,7 @@ Para modelos específicos, edita `tu_llm` en `agent_runner.py`.
 ```
 .
 ├── agent_runner.py      # Flujo principal del agente (chat loop, LLM wrapper)
-├── ia_integrations.py   # Clientes IA: GeminiClient, OnlineAppClient
+├── ia_integrations.py   # Clientes IA: GeminiClient, INTERNALClient
 ├── project_tools.py     # list_files(), read_file_content(), get_project_tree(), extract_entities()
 ├── prompt.md            # Prompt del sistema (reglas del agente)
 ├── README.md            # Esta documentación
@@ -133,7 +133,7 @@ Este proyecto está bajo la [Licencia MIT](LICENSE). Ver `LICENSE` para detalles
 
 ### v0.1.0 (Inicial)
 - Agente runner con XML tags.
-- Integraciones Gemini + OnlineApp.
+- Integraciones Gemini + INTERNAL.
 - Project tools básicas.
 - Prompt con reglas estrictas.
 

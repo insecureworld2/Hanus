@@ -79,7 +79,7 @@ Puedes ver y probar todas las tools disponibles desde el panel web o consultando
 - **Síntesis de voz**: [Edge TTS](https://github.com/rany2/edge-tts)
 - **Base de datos**: SQLite (SQLAlchemy)
 - **Tareas y scheduler**: APScheduler
-- **Integraciones IA**: Gemini, OnlineApp.pro, etc.
+- **Integraciones IA**: Gemini, etc.
 
 ## Estructura de carpetas
 

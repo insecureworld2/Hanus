@@ -79,7 +79,7 @@ You can view and test all available tools from the web panel or by checking the 
 - **Speech synthesis**: [Edge TTS](https://github.com/rany2/edge-tts)
 - **Database**: SQLite (SQLAlchemy)
 - **Tasks & scheduler**: APScheduler
-- **AI integrations**: Gemini, OnlineApp.pro, etc.
+- **AI integrations**: Gemini, etc.
 
 ## Folder Structure
 

@@ -77,9 +77,9 @@ python agent_runner.py
 **Ejemplo de interacción**:
 ```
 Usuario: Crea un README.md profesional.
-Agente: &lt;think&gt;Plan...&lt;/think&gt;
-       &lt;create_file path="README.md"&gt;Contenido completo&lt;/create_file&gt;
-       &lt;final_answer&gt;Hecho.&lt;/final_answer&gt;
+Agente: <think>Plan...</think>
+       <create_file path="README.md">Contenido completo</create_file>
+       <final_answer>Hecho.</final_answer>
 ```
 
 Para modelos específicos, edita `tu_llm` en `agent_runner.py`.
